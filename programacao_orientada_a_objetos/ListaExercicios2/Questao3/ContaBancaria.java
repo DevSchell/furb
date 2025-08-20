@@ -76,5 +76,10 @@ public class ContaBancaria {
             return;
         }
 
+        // CARA!! Eu Esqueci de fazer essas 2 linhas de código, que fazem simplesmente
+        // TUDO que o método precisa fazer kkkkkkkk
+        sacar(valor);
+        contaDestino.depositar(valor);
+
     }
 }
