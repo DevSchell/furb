@@ -15,6 +15,7 @@ public class Funcionario {
     public void setSalario(double valor) {
         if (valor < 0) {
             System.out.println("Valor inválido");
+            return;
         }
         this.salario = valor;
     }
@@ -23,38 +24,50 @@ public class Funcionario {
         return salario;
     }
 
-    public double calcularIrpf(double salario) {
+    public double calcularIrpf() {
+        double salarioParaCalcular = this.salario;
         double imposto = 0;
-        double salarioAtual = salario;
 
-        // 1º Faixa - Imposto isento até R$1903.98
-        salarioAtual -= 1903.98;
+        // Limites das faixas
+        final double faixa1_limite = 1903.98;
+        final double faixa2_limite = 2826.65;
+        final double faixa3_limite = 3751.05;
+        final double faixa4_limite = 4664.68;
 
-        // 2º Faixa
-        if (salarioAtual > 922.67) {
-            imposto += (922.67 * 7.5) / 100;
-            salarioAtual -= 922.67;
-        } // TODO: criar else
 
-        // 3ºFatia
-        if (salarioAtual > 924.39) {
-            imposto += (924.39 * 0.15) / 100;
-            salarioAtual -= 924.39;
-        } //TODO: criar else
 
-        // 4º Fatia
-        if(salarioAtual > 313.62) {
+        // Se o salário for menor ou igual à faixa isenta, o imposto é zero.
+        if (salarioParaCalcular <= faixa1_limite) {
+            return 0;
+        }
 
-        } 
+        // 2ª Faixa: 7.5% sobre a diferença de 1903.99 até 2826.65 (que é 922.67)
+        //Math.min pega o menor valor, pra confirmar que se o salario ser menor q limite da faixa, ele pega o salario e não mais
+        double valorTributavel2 = Math.min(salarioParaCalcular - faixa1_limite, (faixa2_limite - faixa1_limite));
+        imposto += valorTributavel2 * 0.075;
 
-        // 5º Fatia
+        // 3ª Faixa: 15% sobre a diferença de 2826.66 até 3751.05 (que é 924.4)
+        if (salarioParaCalcular > faixa2_limite) {
+            double valorTributavel3 = Math.min(salarioParaCalcular - faixa2_limite, (faixa3_limite - faixa2_limite));
+            imposto += valorTributavel3 * 0.15;
+        }
+        
+        // 4ª Faixa: 22.5% sobre a diferença de 3751.06 até 4664.68 (que é 913.62)
+        if (salarioParaCalcular > faixa3_limite) {
+            double valorTributavel4 = Math.min(salarioParaCalcular - faixa3_limite, (faixa4_limite - faixa3_limite));
+            imposto += valorTributavel4 * 0.225;
+        }
 
-        // 1º fatia = 0
-        // 2º fatia = 922,66
-        // 3º fatia = 924,39
-        // 4º fatia = 913,62
+        // 5ª Faixa: 27.5% sobre o que exceder 4664.68
+        if (salarioParaCalcular > faixa4_limite) {
+            double valorTributavel5 = salarioParaCalcular - faixa4_limite;
+            imposto += valorTributavel5 * 0.275;
+        }
 
         return imposto;
     }
 
 }
+
+
+
