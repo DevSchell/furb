@@ -1,4 +1,4 @@
-package programacao_orientada_a_objetos.ListaExercicios3.Questao1;
+package ListaExercicios3.Questao1;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package programacao_orientada_a_objetos.ListaExercicios1.Questao4;
+package ListaExercicios1.Questao4;
 
 import java.util.ArrayList;
 import java.util.List;

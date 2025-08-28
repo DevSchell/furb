@@ -1,4 +1,4 @@
-package programacao_orientada_a_objetos.ListaExercicios2.Questao2;
+package ListaExercicios2.Questao2;
 
 public class App {
     public static void main(String[] args) {

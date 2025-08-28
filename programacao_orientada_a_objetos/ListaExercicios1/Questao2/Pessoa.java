@@ -1,4 +1,4 @@
-package programacao_orientada_a_objetos.ListaExercicios1.Questao2;
+package ListaExercicios1.Questao2;
 
 public class Pessoa {
     double altura;

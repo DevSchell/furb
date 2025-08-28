@@ -1,4 +1,4 @@
-package programacao_orientada_a_objetos.ListaExercicios3.Questao2;
+package ListaExercicios3.Questao2;
 
 public class Livro {
     // Atributos
@@ -18,10 +18,10 @@ public class Livro {
         totalLivros++;
     }
 
-    public Livro(String titulo, String autor, int anoPublicacao) {
+    public Livro(String titulo, String autor, int ano) {
         this.titulo = titulo;
         this.autor = autor;
-        this.anoPublicacao = anoPublicacao;
+        anoPublicacao = ano;
 
         totalLivros++;
     }

@@ -1,4 +1,4 @@
-package programacao_orientada_a_objetos.ListaExercicios2.Questao1;
+package ListaExercicios2.Questao1;
 
 public class Pessoa {
     private String nome;
