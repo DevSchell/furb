@@ -1,5 +1,6 @@
-package ListaExercicios5;
+package ListaExercicios6;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Instrutor {
@@ -7,7 +8,7 @@ public class Instrutor {
     private String nome;
     private String cref;
     private String especialidade;
-    private List<Aluno> alunos;
+    private final ArrayList<Aluno> alunos = new ArrayList<>();
     private Instrutor mentor;
 
     // Construtor
@@ -97,4 +98,17 @@ public class Instrutor {
         return resumo;
     }
 
+    @Override
+    public String toString() {
+        String resumo = "--------- DADOS DO INSTRUTOR ---------" + "\n";
+        resumo += "Nome: " + getNome() + "\n";
+        resumo += "Cref: " + getCref() + "\n";
+        resumo += "Especialidade: " + getEspecialidade() + "\n";
+
+        if (this.mentor != null) {
+            resumo += "Mentor: " + getMentor() + "\n";
+        }
+
+        return resumo;
+    }
 }

@@ -1,16 +1,17 @@
-package ListaExercicios5;
+package ListaExercicios6;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Representa um plano de treino em um sistema de academia.
+ * Representa um plano de treino num sistema de academia.
  * Cada plano possui uma descrição, um nível e um status de atividade.
  */
 public class PlanoTreino {
     private String descricao;
     private String nivel;
     private boolean ativo;
-    private List<Exercicio> exercicios;
+    private final ArrayList<Exercicio> exercicios = new ArrayList<Exercicio>();
 
     // Construtores
 

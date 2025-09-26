@@ -1,4 +1,4 @@
-package ListaExercicios5;
+package ListaExercicios6;
 
 import ListaExercicios4.Questao1.PlanoTreino;
 
@@ -26,6 +26,7 @@ public class Aluno {
     public static int qtdMatricula = 0;
 
     // Construtores
+
     /**
      * Construtor completo para criar um objeto Aluno.
      * Atribui uma nova matrícula automaticamente.
@@ -180,7 +181,7 @@ public class Aluno {
      * Checa o status da matrícula e retorna uma string.
      *
      * @return Uma string "aluno ativo" se a matrícula estiver ativa, ou "aluno
-     *         inativo" caso contrário.
+     * inativo" caso contrário.
      */
     public String checarStatusMatricula() {
         if (ativo) {
@@ -210,5 +211,19 @@ public class Aluno {
 
     public PlanoTreino getPlano() {
         return plano;
+    }
+
+    public String getResumo() {
+        String resumo = "--------- DADOS DO ALUNO ---------" + "\n";
+        resumo += "Nome: " + getNome() + "\n";
+        resumo += "Matrícula: " + getMatriula() + "\n";
+        resumo += "Idade: " + checarStatusMatricula() + "\n";
+        resumo += "Peso: " + getPeso() + "\n";
+        resumo += "Altura: " + getAltura() + "\n";
+        resumo += "Instrutor: " + getInstrutor() + "\n";
+        resumo += "Plano: " + getPlano() + "\n";
+        resumo += "Status matrícula: " + checarStatusMatricula() + "\n";
+
+        return resumo;
     }
 }
