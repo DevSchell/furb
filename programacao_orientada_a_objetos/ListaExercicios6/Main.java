@@ -34,9 +34,11 @@ public class Main {
 
         /// Criar um AlunoVip()
         AlunoVip alunoVip = new AlunoVip("Quico", 18, instrutorMusculacao);
+        alunoVip.setDescontoMensalidade(20);
 
         /// Print diretamente de Aluno e AlunoVip
         System.out.println(aluno1);
         System.out.println(alunoVip);
+        System.out.println(alunoVip.getDescontoMensalidade());
     }
 }

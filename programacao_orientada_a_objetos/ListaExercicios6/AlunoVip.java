@@ -23,6 +23,14 @@ public class AlunoVip extends Aluno {
         return resumo;
     }
 
+    public void setDescontoMensalidade(double descontoMensalidade) {
+        this.descontoMensalidade = descontoMensalidade;
+    }
+
+    public double getDescontoMensalidade() {
+        return descontoMensalidade;
+    }
+
     @Override
     public String toString() {
         String resumo = "--------- DADOS DO ALUNO ---------" + "\n";
