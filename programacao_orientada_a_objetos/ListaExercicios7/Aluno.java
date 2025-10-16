@@ -70,7 +70,6 @@ public class Aluno extends Pessoa {
      * @throws IllegalArgumentException se a idade for um valor negativo.
      */
     public Aluno(String nome, int idade, Instrutor instrutor) {
-        super();
         try {
             if (idade < 0) {
                 throw new IllegalArgumentException("A idade não pode ser negativa");
