@@ -6,6 +6,13 @@ public class Profissional implements Relatorio{
     private String cpf;
     private String telefone;
 
+    // Constructor
+    Profissional(String cpf, String nomeCompleto, String telefone) {
+        this.cpf = cpf;
+        this.nomeCompleto = nomeCompleto;
+        this.telefone = telefone;
+    };
+
     // Getters and Setters
     public String getNomeCompleto() {
         return nomeCompleto;

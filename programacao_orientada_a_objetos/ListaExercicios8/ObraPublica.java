@@ -5,7 +5,7 @@ public class ObraPublica extends Obra {
     private String construcaoDataFim;
 
     public void calcularDuracao() {
-        //TODO: Must implement
+        //TODO: Implement method
     }
 
     public String getConstrucaoDataComeco() {
