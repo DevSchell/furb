@@ -1,62 +1,59 @@
-package ListaExercicios8;
+package unidade03.exercicios.lista08;
 
-public class Profissional implements Relatorio{
-    // Attributes
-    private String nomeCompleto;
-    private String cpf;
-    private String telefone;
+import java.util.ArrayList;
+import java.util.Objects;
 
-    // Constructor
-    Profissional(String cpf, String nomeCompleto, String telefone) {
-        this.cpf = cpf;
-        this.nomeCompleto = nomeCompleto;
-        this.telefone = telefone;
-    };
+public class Profissional {
 
-    // Getters and Setters
-    public String getNomeCompleto() {
-        return nomeCompleto;
-    }
+	private int id;
+	private String cpf;
+	private String nome;
+	private static int contador = 0;
+	private ArrayList<Projeto> projetos = new ArrayList<>();
 
-    public void setNomeCompleto(String nomeCompleto) {
-        this.nomeCompleto = nomeCompleto;
-    }
+	public Profissional() {
+		this.id = ++contador;
+	}
 
-    public String getCpf() {
-        return cpf;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public String getTelefone() {
-        return telefone;
-    }
+	public String getCpf() {
+		return cpf;
+	}
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 
-    // Methods
+	public String getNome() {
+		return nome;
+	}
 
-    @Override
-    public void gerarRelatorioCompleto() {
-        //TODO: implement method...
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    @Override
-    public void gerarRelatorioPorTipo() {
-        //TODO: implement method...
-    }
+	public ArrayList<Projeto> getProjetos() {
+		return projetos;
+	}
 
-    @Override
-    public void gerarRelatorioPorProfissional() {
-        //TODO: implement method...
-    }
+	public void adicionaProjeto(Projeto projeto) {
+		this.projetos.add(projeto);
+	}
 
-    @Override
-    public void gerarRelatorioResumido() {
-        //TODO: implement method...
-    }
+	@Override
+	public boolean equals(Object o) {
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		Profissional outro = (Profissional) o;
+		return Objects.equals(cpf, outro.cpf);
+	}
+
 }
